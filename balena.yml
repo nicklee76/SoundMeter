@@ -1,0 +1,31 @@
+name: balenaDash
+description: >-
+  Raspberry Pi-powered sound/noise meter
+type: sw.application
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/nicklee76/SoundMeter'
+data:
+  applicationConfigVariables:
+    - BALENA_HOST_CONFIG_gpu_mem: 128
+    - BALENA_HOST_CONFIG_dtoverlay: "vc4-fkms-v3d"
+  applicationEnvironmentVariables:
+    - SHOW_CURSOR: 0
+    - CONTROL_TV: 0
+    - ENABLE_GPU: 0
+    - KIOSK: 1
+    - PERSISTENT: 1
+    - PORTAL_SSID: balenaDash
+    - PORTAL_PASSPHRASE: balenaDash
+    - ACTIVITY_TIMEOUT: 600
+    - LAUNCH_URL: ''
+    - ROTATE_DISPLAY: normal
+    - WINDOW_POSITION: '0,0'
+    - LOCAL_HTTP_DELAY: 0
+    - FBCP_DISPLAY: ''
+  defaultDeviceType: raspberrypi3-64
+  supportedDeviceTypes:
+    - raspberrypi3-64
+version: 0.0.1
